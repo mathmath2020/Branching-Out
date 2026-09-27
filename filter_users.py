@@ -1,5 +1,6 @@
 import json
 
+
 def filter_users_by_name(name):
     with open("users.json", "r") as file:
         users = json.load(file)
@@ -8,6 +9,7 @@ def filter_users_by_name(name):
     
     for user in filtered_users:
         print(user)
+
 
 def filter_users_by_age(age):
     with open("users.json", "r") as file:
@@ -18,6 +20,7 @@ def filter_users_by_age(age):
     for user in filtered_users:
         print(user)
 
+
 def filter_users_by_email(email):
     with open("users.json", "r") as file:
         users = json.load(file)
@@ -27,8 +30,9 @@ def filter_users_by_email(email):
     for user in filtered_users:
         print(user)
 
+
 if __name__ == "__main__":
-    filter_option = input("What would you like to filter by? (Currently, only 'name', 'age' and 'email' are supported): ").strip().lower()
+    filter_option = input("What would you like to filter by? ('name', 'age' and 'email'): ").strip().lower()
     
     if filter_option == "name":
         name_to_search = input("Enter a name to filter users: ").strip()
@@ -40,4 +44,4 @@ if __name__ == "__main__":
         email_to_search = input("Enter an email to filter users: ").strip()
         filter_users_by_email(email_to_search)    
     else:
-        print("Filtering by that option is not yet supported.")
+        print(f"Filtering by {filter_option} is not yet supported.")
